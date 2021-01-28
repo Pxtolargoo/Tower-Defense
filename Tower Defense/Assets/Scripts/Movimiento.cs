@@ -21,6 +21,10 @@ public class Movimiento : MonoBehaviour
         {
             _rb.velocity = transform.forward * velocidad;
         }
+        else
+        {
+            _rb.velocity = Vector3.zero;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
