@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/AnimacionMuertePj1.unity
+- path: Assets/Scenes/Ataque_Animado.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
