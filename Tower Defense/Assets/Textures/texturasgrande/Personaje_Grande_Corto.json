@@ -1,0 +1,58 @@
+{
+    "format": {
+        "version": "1.0"
+    },
+    "shaders": {
+        "Main shader": {
+            "parameters": {
+                "Common Parameters": {
+                    "ao_intensity": 0.75,
+                    "emissive_intensity": 1,
+                    "horizonFade": 1.2999999523162842,
+                    "nbSamples": 16
+                },
+                "Parallax Occlusion Mapping": {
+                    "maxPOMSamples": 16,
+                    "minPOMSamples": 4,
+                    "pomStrength": 1,
+                    "usePOM": false
+                },
+                "Subsurface Scattering Parameters": {
+                    "sssColor": [
+                        0.7009999752044678,
+                        0.3009999990463257,
+                        0.3050000071525574
+                    ],
+                    "sssEnabled": true,
+                    "sssScale": 0.5,
+                    "sssType": 1
+                }
+            },
+            "shader": "pbr-metal-rough",
+            "shaderInstance": "Main shader"
+        }
+    },
+    "texturesets": {
+        "Botas_personaje_wire_224198087": {
+            "shader": "Main shader"
+        },
+        "Brazaletes_UVS_wire_224198087": {
+            "shader": "Main shader"
+        },
+        "Cinta_botas_wire_224198087": {
+            "shader": "Main shader"
+        },
+        "Cintur�n_UVS_default": {
+            "shader": "Main shader"
+        },
+        "Ojos": {
+            "shader": "Main shader"
+        },
+        "Pantalones": {
+            "shader": "Main shader"
+        },
+        "Piel": {
+            "shader": "Main shader"
+        }
+    }
+}
