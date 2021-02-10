@@ -76,7 +76,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 147
+  controlID: 154
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 85
+  controlID: 84
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 87
+  controlID: 86
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 86
+  controlID: 85
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -450,7 +450,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6cf3ffff86f7ffff5c4c0000
+      m_ExpandedIDs: ca60ffff9c63ffff8065ffff2c66ffffd27dffff2082ffff3c85ffff5688ffffbca1ffffcaa3ffffb2a5ffffd6a7ffff88aaffff70acffff56aeffff02afffffa6c6ffffc4c9ffffe0ccffff30d1ffff74e9ffff22eaffff08ecfffff2edffffc8eeffff40f8ffff6afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -539,9 +539,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.25260898, y: 1.8370113, z: -0.55444515}
+    m_Target: {x: 11.585733, y: 31.458595, z: 12.147084}
     speed: 2
-    m_Value: {x: -0.25260898, y: 1.8370113, z: -0.55444515}
+    m_Value: {x: -1.443737, y: 22.343365, z: 15.471054}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -587,13 +587,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.025568891, y: 0.9646077, z: -0.10195967, w: -0.2418912}
+    m_Target: {x: -0.09266481, y: 0.44521245, z: -0.04638309, w: -0.88942665}
     speed: 2
-    m_Value: {x: -0.025721427, y: 0.9642298, z: -0.10191972, w: -0.24333431}
+    m_Value: {x: 0.018810196, y: 0.6074777, z: 0.014397876, w: -0.79398346}
   m_Size:
-    m_Target: 1.2604165
+    m_Target: 19.904442
     speed: 2
-    m_Value: 0.9604165
+    m_Value: 20.842348
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -747,34 +747,34 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Texturas/Texturas_Personaje_Grande
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 74
   m_LastFolders:
-  - Assets/Texturas/Texturas_Personaje_Grande
+  - Assets/Prefabs
   m_LastFoldersGridSize: 74
   m_LastProjectPath: C:\Users\Alumno\Desktop\flappy_v\Tower-Defense\Tower Defense
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 250}
-    m_SelectedIDs: 0a4d0000
-    m_LastClickedID: 19722
-    m_ExpandedIDs: 00000000a63b0000043d0000063d0000083d00003e3d000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: ca3d0000
+    m_LastClickedID: 15818
+    m_ExpandedIDs: 00000000d43a00006e3d0000703d0000743d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: TexturasEstandarte.Azul
-      m_OriginalName: TexturasEstandarte.Azul
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 19708
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
@@ -788,7 +788,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a63b0000043d0000063d0000083d00000a3d0000
+    m_ExpandedIDs: 00000000d43a00006e3d0000703d0000723d0000743d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
