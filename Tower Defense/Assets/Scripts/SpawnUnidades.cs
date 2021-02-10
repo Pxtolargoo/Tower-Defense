@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnUnidades : MonoBehaviour
 {
+    public int equipo;
     public GameObject[] unidades;
     //GameObject[] seleccion = new GameObject[] { };
     List<GameObject> seleccion = new List<GameObject>();
@@ -40,6 +41,7 @@ public class SpawnUnidades : MonoBehaviour
 
     public IEnumerator Spawn()
     {
+        GameObject spawned;
         while (true)
         {
             if (contCola > 0 && contSpawn < seleccion.Count)
@@ -47,7 +49,16 @@ public class SpawnUnidades : MonoBehaviour
                 Debug.Log("Unidad Spawneada");
                 Debug.Log("Indice Spwan "+contSpawn);
                 Debug.Log("Longitud Lista " + seleccion.Count);
-                Instantiate(seleccion[contSpawn], transform.position, transform.rotation);
+                spawned=Instantiate(seleccion[contSpawn], transform.position, transform.rotation);
+                if (equipo==1)
+                {
+                    spawned.layer = 8;
+                }
+                else
+                {
+                    spawned.layer = 9;
+                }
+                
                 contSpawn++;
                 yield return new WaitForSeconds(2);
             }
