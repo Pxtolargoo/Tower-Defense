@@ -1504,8 +1504,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4012874126526406408}
   - component: {fileID: 3475141450355452728}
+  - component: {fileID: 744166761512059144}
+  - component: {fileID: 9034762744823176784}
+  - component: {fileID: 1596248206719344991}
   m_Layer: 0
-  m_Name: "PersonajePeque\xF1oenT"
+  m_Name: PersonajePequeno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1554,6 +1557,51 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &744166761512059144
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394184396471928242}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &9034762744823176784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394184396471928242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4d58bef45665c42b06ee2eb15a6421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ataque: 30
+  velocidad: 2
+  vida: 100
+--- !u!114 &1596248206719344991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394184396471928242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5bb053627092644ca1b14fec7c2c060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  andando: 0
+  velocidad: 1
 --- !u!1 &4491285393814262166
 GameObject:
   m_ObjectHideFlags: 0

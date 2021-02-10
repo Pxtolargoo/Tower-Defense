@@ -9,6 +9,7 @@ public class Movimiento : MonoBehaviour
     public float velocidad=1;
     RaycastHit hit;
     bool colisiona;
+    int layerColision;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +22,20 @@ public class Movimiento : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.white);
-        colisiona =Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1);
+        if (gameObject.layer == 9)
+        {
+            layerColision = 8;
+        }
+        else
+        {
+            layerColision = 9;
+        }
+        colisiona =Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1, layerColision);
         if (!colisiona)
         {
             andando = true;
             _rb.velocity = transform.forward * velocidad;
+            Debug.Log("choco", hit.transform.gameObject);
         }
         else
         {
