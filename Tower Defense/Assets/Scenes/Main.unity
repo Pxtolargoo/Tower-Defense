@@ -383,8 +383,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipo: 1
   unidades:
-  - {fileID: 4394184396471928242, guid: f355e8dc65a61014b97f65ef7f8c6f0e, type: 3}
-  - {fileID: 3967645648123492723, guid: 5fb9cb9a8cd292a42ae4a7b702ba7f7a, type: 3}
+  - {fileID: 1453003061774014266, guid: 4d922d4850352844582808b877d9f0a0, type: 3}
+  - {fileID: 6833979154358827407, guid: 29d922799a8d4fa4aa0fb4481c5f55fe, type: 3}
 --- !u!1 &1162494730
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,8 +416,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipo: 2
   unidades:
-  - {fileID: 4394184396471928242, guid: f355e8dc65a61014b97f65ef7f8c6f0e, type: 3}
-  - {fileID: 3967645648123492723, guid: 5fb9cb9a8cd292a42ae4a7b702ba7f7a, type: 3}
+  - {fileID: 1453003061774014266, guid: 4d922d4850352844582808b877d9f0a0, type: 3}
+  - {fileID: 6833979154358827407, guid: 29d922799a8d4fa4aa0fb4481c5f55fe, type: 3}
 --- !u!4 &1162494732
 Transform:
   m_ObjectHideFlags: 0
