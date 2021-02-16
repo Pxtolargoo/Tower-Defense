@@ -36,7 +36,7 @@ public class SpawnUnidades : MonoBehaviour
             seleccion.Add(unidades[0]);
         }
         contCola++;
-        Debug.Log("Unidad Añadida");
+        //Debug.Log("Unidad Añadida");
     }
 
     public IEnumerator Spawn()
@@ -46,9 +46,9 @@ public class SpawnUnidades : MonoBehaviour
         {
             if (contCola > 0 && contSpawn < seleccion.Count)
             {
-                Debug.Log("Unidad Spawneada");
-                Debug.Log("Indice Spwan "+contSpawn);
-                Debug.Log("Longitud Lista " + seleccion.Count);
+                //Debug.Log("Unidad Spawneada");
+                //Debug.Log("Indice Spwan "+contSpawn);
+                //Debug.Log("Longitud Lista " + seleccion.Count);
                 spawned=Instantiate(seleccion[contSpawn], transform.position, transform.rotation);
                 if (equipo==1)
                 {
@@ -64,7 +64,7 @@ public class SpawnUnidades : MonoBehaviour
             }
             else
             {
-                Debug.Log("Unidad No Spawneada");
+                //Debug.Log("Unidad No Spawneada");
                 yield return null;
             }
         }

@@ -10,32 +10,58 @@ public class Combate : MonoBehaviour
     private bool colisiona;
     RaycastHit hit;
     bool atacando = false;
+    Animator animacion;
+    int layer;
+    bool muriendo = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animacion = GetComponent<Animator>();
+        if (gameObject.layer == 9)
+        {
+            layer = 8;
+        }
+        else
+        {
+            layer = 9;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (vida <= 0)
+        
+        if (vida <= 0 && !muriendo)
         {
-            Destroy(gameObject);
+            muriendo = true;
+            StartCoroutine(Morir());
         }
-        colisiona = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1);
+
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.TransformDirection(Vector3.forward), Color.red);
+        colisiona = Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.TransformDirection(Vector3.forward), out hit,1);
         if (colisiona)
         {
-            if (hit.transform.gameObject.layer != gameObject.layer && !atacando)
+            //if (gameObject.layer!=hit.transform.gameObject.layer)
+            //{
+            if (!atacando&& gameObject.layer != hit.transform.gameObject.layer)
             {
+                Debug.Log("ataca");
+                animacion.SetTrigger("Atacar");
+                animacion.speed = velocidad;
                 atacando = true;
                 StartCoroutine(Combatir(gameObject, hit.transform.gameObject));
             }
-            
+            else
+            {
+                Debug.Log("asd");
+                Debug.Log(gameObject.layer + " " + hit.transform.gameObject.layer);
+            }
+            //}
         }
         else
         {
+            Debug.Log("wtf");
             atacando = false;
         }
     }
@@ -54,8 +80,8 @@ public class Combate : MonoBehaviour
     {
         while (defensor!=null)
         {
+            yield return new WaitForSeconds(2.267f*velocidad);
             Atacar(atacante, defensor);
-            yield return new WaitForSeconds(velocidad);
         }
         
     }
@@ -67,6 +93,13 @@ public class Combate : MonoBehaviour
     public void RecibirDmg(int dmg)
     {
         vida -= dmg;
+    }
+
+    IEnumerator Morir()
+    {
+        animacion.SetTrigger("Morir");
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 
 }
