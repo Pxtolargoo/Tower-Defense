@@ -43,3 +43,17 @@ The following packages were added:
   com.unity.textmeshpro@2.1.1
   com.unity.timeline@1.2.16
   com.unity.ugui@1.0.0
+
+=== Wed Feb 17 19:34:18 2021
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.2d.sprite@1.0.0
+  com.unity.device-simulator@2.0.0-preview
+  com.unity.localization@0.7.1-preview
+  com.unity.xr.arkit@4.1.0-preview.5
+The following packages were updated:
+  com.unity.xr.arcore from version 2.1.16 to 4.1.0-preview.5
+  com.unity.xr.arfoundation from version 2.1.16 to 4.1.0-preview.5
