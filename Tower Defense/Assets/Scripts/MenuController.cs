@@ -6,10 +6,29 @@ public class MenuController : MonoBehaviour
 {
     public GameObject panelHUD;
     public GameObject panelPause;
+    public GameObject panelJugar;
+    public GameObject panelReiniciar;
+    public GameObject panelReanudar;
+
     void Start()
     {
         panelHUD.SetActive(false);
         panelPause.SetActive(false);
+        panelJugar.SetActive(true);
+        panelReiniciar.SetActive(false);
+        panelReanudar.SetActive(false);
+    }
+
+    public void Jugar()
+    {
+        panelJugar.SetActive(false);
+        panelHUD.SetActive(true);
+    }
+
+    public void HUD()
+    {
+        panelHUD.SetActive(false);
+        panelPause.SetActive(true);
     }
 
     public void Pause()
@@ -17,32 +36,14 @@ public class MenuController : MonoBehaviour
         Time.timeScale = 0;
         panelPause.SetActive(true);
 
-
-
-
     }
-
-   
 
     public void Reanudar()
     {
 
-
-
-    }
-
-    public void Salir()
-    {
-
-
-
-    }
-
-    public void Jugar()
-    {
-
-
-
+        Time.timeScale = 1;
+        panelPause.SetActive(false);
+        panelHUD.SetActive(true);
     }
 
     public void Sound()
@@ -53,6 +54,13 @@ public class MenuController : MonoBehaviour
     }
 
     public void Reiniciar()
+    {
+        panelReiniciar.SetActive(false);
+        panelHUD.SetActive(true);
+
+    }
+
+    public void Salir()
     {
 
 
