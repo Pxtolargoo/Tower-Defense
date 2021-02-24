@@ -13,6 +13,7 @@ public class Combate : MonoBehaviour
     Animator animacion;
     int layer;
     bool muriendo = false;
+    SpawnUnidades spawner;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +22,15 @@ public class Combate : MonoBehaviour
         if (gameObject.layer == 9)
         {
             layer = 8;
+            spawner = GameObject.Find("SpawnPointIA").GetComponent<SpawnUnidades>();
+
         }
         else
         {
             layer = 9;
+            spawner = GameObject.Find("SpawnPoint").GetComponent<SpawnUnidades>();
         }
+
     }
 
     // Update is called once per frame
@@ -39,7 +44,7 @@ public class Combate : MonoBehaviour
         }
 
         //Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.TransformDirection(Vector3.forward), Color.red);
-        colisiona = Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.TransformDirection(Vector3.forward), out hit, 1);
+        colisiona = Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 0.01f, transform.position.z), transform.TransformDirection(Vector3.forward), out hit, 0.01f);
         if (colisiona)
         {
             //if (gameObject.layer!=hit.transform.gameObject.layer)

@@ -33,8 +33,8 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(new Vector3(transform.position.x,transform.position.y+1,transform.position.z) , transform.TransformDirection(Vector3.forward), Color.white);
-        colisiona =Physics.Raycast(new Vector3(transform.position.x,transform.position.y+1,transform.position.z), transform.TransformDirection(Vector3.forward), out hit, 1);
+        Debug.DrawRay(new Vector3(transform.position.x,transform.position.y+0.01f,transform.position.z) , transform.TransformDirection(Vector3.forward)* 0.01f, Color.white);
+        colisiona =Physics.Raycast(new Vector3(transform.position.x,transform.position.y+ 0.01f, transform.position.z), transform.TransformDirection(Vector3.forward), out hit, 0.01f);
         if (!colisiona)
         {
             if(!andando){
