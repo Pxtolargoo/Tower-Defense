@@ -22,13 +22,13 @@ public class Combate : MonoBehaviour
         if (gameObject.layer == 9)
         {
             layer = 8;
-            spawner = GameObject.Find("SpawnPointIA").GetComponent<SpawnUnidades>();
+            spawner = GameObject.Find("SpawnPoint").GetComponent<SpawnUnidades>();
 
         }
         else
         {
             layer = 9;
-            spawner = GameObject.Find("SpawnPoint").GetComponent<SpawnUnidades>();
+            spawner = GameObject.Find("SpawnPointIA").GetComponent<SpawnUnidades>();
         }
 
     }
@@ -39,6 +39,7 @@ public class Combate : MonoBehaviour
         
         if (vida <= 0 && !muriendo)
         {
+            spawner.recursos += 5;
             muriendo = true;
             StartCoroutine(Morir());
         }
