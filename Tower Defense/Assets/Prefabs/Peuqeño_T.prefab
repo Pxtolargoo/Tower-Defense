@@ -421,7 +421,7 @@ Transform:
   m_GameObject: {fileID: 1453003061774014266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 6581929179432118399}
   - {fileID: 1135635144343691468}
@@ -479,6 +479,7 @@ MonoBehaviour:
   ataque: 30
   velocidad: 1
   vida: 100
+  atacando: 0
 --- !u!114 &5964961536545581129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,7 +493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   andando: 0
-  velocidad: 1
+  velocidad: 0.01
+  combateScript: {fileID: 0}
 --- !u!95 &8873301586291243360
 Animator:
   serializedVersion: 3

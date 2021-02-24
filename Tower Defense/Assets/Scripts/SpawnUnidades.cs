@@ -10,13 +10,14 @@ public class SpawnUnidades : MonoBehaviour
     List<GameObject> seleccion = new List<GameObject>();
     int contSpawn = 0;
     int contCola = 0;
+    public int recursos = 10;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine("Spawn");
         StartCoroutine("PruebaDelay");
-        AddToSpawn("PjGrande");
-        AddToSpawn("PjPequeno");
+        StartCoroutine(RescursosPasivos());
     }
 
     // Update is called once per frame
@@ -38,7 +39,14 @@ public class SpawnUnidades : MonoBehaviour
         contCola++;
         //Debug.Log("Unidad Añadida");
     }
-
+    public IEnumerator RescursosPasivos()
+    {
+        while (true)
+        {
+            recursos += 1;
+            yield return new WaitForSeconds(1);
+        }
+    }
     public IEnumerator Spawn()
     {
         GameObject spawned;
@@ -58,7 +66,6 @@ public class SpawnUnidades : MonoBehaviour
                 {
                     spawned.layer = 9;
                 }
-                
                 contSpawn++;
                 yield return new WaitForSeconds(2);
             }
@@ -80,13 +87,21 @@ public class SpawnUnidades : MonoBehaviour
             int randomPj=(int)Random.Range(0.0f, 2.0f);
             if (randomPj == 1)
             {
-                AddToSpawn("PjGrande");
+                if (recursos >= 10)
+                {
+                    AddToSpawn("PjGrande");
+                    recursos -= 10;
+                }
+                
             }
             else
             {
-                AddToSpawn("PjPequeno");
+                if (recursos >= 5)
+                {
+                    AddToSpawn("PjPequeno");
+                    recursos -= 5;
+                }
             }
-            
         }
         
     }

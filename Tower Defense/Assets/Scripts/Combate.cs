@@ -9,10 +9,11 @@ public class Combate : MonoBehaviour
     public int vida;
     private bool colisiona;
     RaycastHit hit;
-    bool atacando = false;
+    public bool atacando = false;
     Animator animacion;
     int layer;
     bool muriendo = false;
+    SpawnUnidades spawner;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +22,15 @@ public class Combate : MonoBehaviour
         if (gameObject.layer == 9)
         {
             layer = 8;
+            spawner = GameObject.Find("SpawnPoint").GetComponent<SpawnUnidades>();
+
         }
         else
         {
             layer = 9;
+            spawner = GameObject.Find("SpawnPointIA").GetComponent<SpawnUnidades>();
         }
+
     }
 
     // Update is called once per frame
@@ -34,34 +39,36 @@ public class Combate : MonoBehaviour
         
         if (vida <= 0 && !muriendo)
         {
+            spawner.recursos += 5;
             muriendo = true;
             StartCoroutine(Morir());
         }
 
-        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.TransformDirection(Vector3.forward), Color.red);
-        colisiona = Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.TransformDirection(Vector3.forward), out hit,1);
+        //Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.TransformDirection(Vector3.forward), Color.red);
+        colisiona = Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 0.01f, transform.position.z), transform.TransformDirection(Vector3.forward), out hit, 0.01f);
         if (colisiona)
         {
             //if (gameObject.layer!=hit.transform.gameObject.layer)
             //{
             if (!atacando&& gameObject.layer != hit.transform.gameObject.layer)
             {
-                Debug.Log("ataca");
+                //Debug.Log("ataca");
                 animacion.SetTrigger("Atacar");
+                animacion.SetInteger("Idle", -1);
                 animacion.speed = velocidad;
                 atacando = true;
                 StartCoroutine(Combatir(gameObject, hit.transform.gameObject));
             }
             else
             {
-                Debug.Log("asd");
-                Debug.Log(gameObject.layer + " " + hit.transform.gameObject.layer);
+                //Debug.Log("asd");
+                //Debug.Log(gameObject.layer + " " + hit.transform.gameObject.layer);
             }
             //}
         }
         else
         {
-            Debug.Log("wtf");
+            //Debug.Log("wtf");
             atacando = false;
         }
     }
