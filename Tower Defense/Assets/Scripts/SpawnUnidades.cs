@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnUnidades : MonoBehaviour
 {
@@ -11,19 +12,24 @@ public class SpawnUnidades : MonoBehaviour
     int contSpawn = 0;
     int contCola = 0;
     public int recursos = 10;
+    public Text recursosG;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         StartCoroutine("Spawn");
-        StartCoroutine("PruebaDelay");
+        if (gameObject.name == "SpawnPointIA")
+        {
+            StartCoroutine("PruebaDelay");
+        }
         StartCoroutine(RescursosPasivos());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        recursosG.text = recursos.ToString();
     }
 
     public void AddToSpawn(string tipo)
@@ -39,12 +45,13 @@ public class SpawnUnidades : MonoBehaviour
         contCola++;
         //Debug.Log("Unidad Añadida");
     }
+
     public IEnumerator RescursosPasivos()
     {
         while (true)
         {
             recursos += 1;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(3);
         }
     }
     public IEnumerator Spawn()
