@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
@@ -63,15 +64,15 @@ public class MenuController : MonoBehaviour
 
     public void Reiniciar()
     {
-        panelReiniciar.SetActive(false);
-        panelHUD.SetActive(true);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
 
     public void Salir()
     {
 
-
+        Application.Quit();
 
     }
 
