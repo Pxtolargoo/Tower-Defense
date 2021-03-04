@@ -51,7 +51,7 @@ public class Combate : MonoBehaviour
         {
             //if (gameObject.layer!=hit.transform.gameObject.layer)
             //{
-            if (hit.transform.name != "Atalaya") {
+            if (hit.transform.name != "Atalaya" && hit.transform.name != "AtalayaIA") {
                 if (!atacando && gameObject.layer != hit.transform.gameObject.layer)
                 {
                     //Debug.Log("ataca");
