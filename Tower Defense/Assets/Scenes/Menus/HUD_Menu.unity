@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -405,6 +405,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelHUD: {fileID: 591674273}
   panelPause: {fileID: 483950320}
+  panelJugar: {fileID: 0}
+  panelReiniciar: {fileID: 0}
+  panelReanudar: {fileID: 0}
 --- !u!4 &2123467741
 Transform:
   m_ObjectHideFlags: 0
@@ -430,10 +433,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2123467740}
-    - target: {fileID: 414677829, guid: 8909688bc22ef0a4db5ac8093fbdec1f, type: 3}
-      propertyPath: m_Name
-      value: Pause
-      objectReference: {fileID: 0}
     - target: {fileID: 829647297, guid: 8909688bc22ef0a4db5ac8093fbdec1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -442,20 +441,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2123467740}
-    - target: {fileID: 1568344773, guid: 8909688bc22ef0a4db5ac8093fbdec1f, type: 3}
-      propertyPath: panelHUD
-      value: 
-      objectReference: {fileID: 591674273}
     - target: {fileID: 6230387698816467479, guid: 8909688bc22ef0a4db5ac8093fbdec1f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2123467740}
-    - target: {fileID: 6230387698816467479, guid: 8909688bc22ef0a4db5ac8093fbdec1f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Reanudar
-      objectReference: {fileID: 0}
     - target: {fileID: 6230387699203938489, guid: 8909688bc22ef0a4db5ac8093fbdec1f,
         type: 3}
       propertyPath: m_Name

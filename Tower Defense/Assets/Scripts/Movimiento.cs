@@ -40,8 +40,9 @@ public class Movimiento : MonoBehaviour
             if(!andando){
                 animacion.SetTrigger("Andar");
                 animacion.SetInteger("Idle", -1);
+                andando = true;
             }
-            andando = true;
+            
             _rb.velocity = transform.forward * velocidad;
             Debug.Log("Nochoco ");
         }
@@ -57,9 +58,9 @@ public class Movimiento : MonoBehaviour
                 {
                     animacion.SetInteger("Idle", idleRandom);
                 }
-                    
-                //}
                 andando = false;
+                //}
+
             }
             else
             {

@@ -14,6 +14,7 @@ public class Combate : MonoBehaviour
     int layer;
     bool muriendo = false;
     SpawnUnidades spawner;
+    bool rompiendoAtalaya = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,21 +51,39 @@ public class Combate : MonoBehaviour
         {
             //if (gameObject.layer!=hit.transform.gameObject.layer)
             //{
-            if (!atacando&& gameObject.layer != hit.transform.gameObject.layer)
-            {
-                //Debug.Log("ataca");
-                animacion.SetTrigger("Atacar");
-                animacion.SetInteger("Idle", -1);
-                animacion.speed = velocidad;
-                atacando = true;
-                StartCoroutine(Combatir(gameObject, hit.transform.gameObject));
+            if (hit.transform.name != "Atalaya") {
+                if (!atacando && gameObject.layer != hit.transform.gameObject.layer)
+                {
+                    //Debug.Log("ataca");
+                    animacion.SetTrigger("Atacar");
+                    animacion.SetInteger("Idle", -1);
+                    animacion.speed = velocidad;
+                    atacando = true;
+                    gameObject.GetComponent<Movimiento>().andando = false;
+                    StartCoroutine(Combatir(gameObject, hit.transform.gameObject));
+                }
+                else
+                {
+                    
+                    //Debug.Log("asd");
+                    //Debug.Log(gameObject.layer + " " + hit.transform.gameObject.layer);
+                }
+                //}
             }
             else
             {
-                //Debug.Log("asd");
-                //Debug.Log(gameObject.layer + " " + hit.transform.gameObject.layer);
+                if (!rompiendoAtalaya)
+                {
+                    rompiendoAtalaya = true;
+                    Debug.Log("ComeDaño");
+                    animacion.SetTrigger("Atacar");
+                    animacion.SetInteger("Idle", -1);
+                    hit.transform.gameObject.GetComponent<Atalaya>().vida -= 50;
+                    StartCoroutine(Destruir());
+                }
+                
             }
-            //}
+
         }
         else
         {
@@ -105,6 +124,12 @@ public class Combate : MonoBehaviour
     IEnumerator Morir()
     {
         animacion.SetTrigger("Morir");
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+    }
+
+    IEnumerator Destruir()
+    {
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }

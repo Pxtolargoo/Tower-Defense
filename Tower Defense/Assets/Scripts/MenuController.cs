@@ -9,16 +9,24 @@ public class MenuController : MonoBehaviour
     public GameObject panelJugar;
     public GameObject panelReiniciar;
     public GameObject panelReanudar;
+    public GameObject vidaPlayerG;
+    int vidaPlayer;
+    public GameObject spawnerPlayer;
+
 
     void Start()
     {
-        panelHUD.SetActive(false);
+        //panelHUD.SetActive(false);
         panelPause.SetActive(false);
-        panelJugar.SetActive(true);
+        panelJugar.SetActive(false);
         panelReiniciar.SetActive(false);
         panelReanudar.SetActive(false);
     }
-
+    public void LoseOrWin()
+    {
+        Time.timeScale = 0;
+        panelJugar.SetActive(true);
+    }
     public void Jugar()
     {
         panelJugar.SetActive(false);
@@ -69,16 +77,21 @@ public class MenuController : MonoBehaviour
 
     public void Unidad1()
     {
-
-
-
+        if (spawnerPlayer.GetComponent<SpawnUnidades>().recursos >= 5)
+        {
+            spawnerPlayer.GetComponent<SpawnUnidades>().recursos -= 5;
+            spawnerPlayer.GetComponent<SpawnUnidades>().AddToSpawn("PjPequeno");
+        }
     }
 
     public void Unidad2()
     {
-
-
-
+        if (spawnerPlayer.GetComponent<SpawnUnidades>().recursos >= 10)
+        {
+            spawnerPlayer.GetComponent<SpawnUnidades>().recursos -= 10;
+            spawnerPlayer.GetComponent<SpawnUnidades>().AddToSpawn("PjGrande");
+        }
+       
     }
 
 
