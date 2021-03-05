@@ -17,11 +17,13 @@ public class MenuController : MonoBehaviour
 
     void Start()
     {
+        
         //panelHUD.SetActive(false);
         panelPause.SetActive(false);
         panelJugar.SetActive(false);
         panelReiniciar.SetActive(false);
         panelReanudar.SetActive(false);
+        spawnerPlayer = GameObject.Find("SpawnPoint");
     }
     public void LoseOrWin()
     {
@@ -103,6 +105,9 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //while (spawnerPlayer==null)
+        //{
+
+        //}
     }
 }

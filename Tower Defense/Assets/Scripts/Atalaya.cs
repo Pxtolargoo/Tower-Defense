@@ -9,12 +9,21 @@ public class Atalaya : MonoBehaviour
     public string propietario = "IA";
     public MenuController menus;
     public Text textoResultado;
-
     public Text vidaT; 
+
     // Start is called before the first frame update
     void Start()
     {
-
+        if (propietario == "IA")
+        {
+            vidaT = GameObject.Find("VidaIA").GetComponent<Text>(); 
+        }
+        else
+        {
+            vidaT = GameObject.Find("VidaPlayer").GetComponent<Text>();
+        }
+        textoResultado = GameObject.Find("Resultado").GetComponent<Text>();
+        menus = GameObject.Find("CanvasGeneral").GetComponent<MenuController>();
     }
 
     // Update is called once per frame

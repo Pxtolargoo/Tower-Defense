@@ -18,6 +18,7 @@ public class SpawnUnidades : MonoBehaviour
     void Start()
     {
         
+
         StartCoroutine("Spawn");
         if (gameObject.name == "SpawnPointIA")
         {
